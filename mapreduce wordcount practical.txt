@@ -1,0 +1,22 @@
+Start-all.cmd
+Create an input directory in HDFS.
+hadoop fs -mkdir /input_dir
+hadoop fs -put C:/wordcount.txt /input_dir
+hadoop fs -ls /input_dir/
+
+Run MapReduceClient.jar and also provide input and out directories.
+
+hadoop jar C:/MapReduceClient.jar wordcount /input_dir /output_dir
+
+hadoop dfs -cat /output_dir/*
+
+To leave Safe mode
+hadoop dfsadmin –safemode leave
+
+To Delete file from HDFS directory
+hadoop fs -rm -r /iutput_dir/wordcount.txt
+
+To Delete directory from HDFS directory
+
+hadoop fs -rm -r /iutput_dir
+
